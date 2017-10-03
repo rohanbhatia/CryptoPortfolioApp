@@ -27,7 +27,7 @@ app.get('/transactions', function (req, res) {
   		});
 
   		//transactions
-  		con.query("SELECT * FROM TRANSACTIONS", function (err, result) {
+  		con.query("SELECT * FROM transactions", function (err, result) {
     		
     		if (err) throw err;
     		console.log("Result: " + result);

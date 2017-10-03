@@ -30,11 +30,14 @@ app.get('/transactions', function (req, res) {
   		con.query("SELECT * FROM transactions", function (err, result) {
     		
     		if (err) throw err;
-    		for r in result:
 
-    			for field in r:
+    		for r in result {
+
+    			for field in r {
 
     				console.log(field);
+    			}
+  			
   		});
 	});
 

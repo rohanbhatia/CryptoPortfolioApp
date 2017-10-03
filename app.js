@@ -29,13 +29,13 @@ app.get('/transactions', function (req, res) {
     		if (err) throw err;
 
     		transactions = json.stringify(result);
-    		
+    		res.send(transactions);
   		});
   
 	});
 	
 	con.end();
-	res.send(transactions);
+	
 	
 });
 

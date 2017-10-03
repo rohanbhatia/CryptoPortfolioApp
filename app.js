@@ -22,20 +22,21 @@ app.get('/transactions', function (req, res) {
   		
   		if (err) throw err;
   		
-  	
-
   		//transactions
+  		var transactions; 
   		con.query("SELECT * FROM transactions", function (err, result) {
     		
     		if (err) throw err;
 
-    		console.log(result);
+    		transactions = json.stringify(result);
+    		
   		});
   
 	});
-
-
-
+	
+	con.end();
+	res.send(transactions);
+	
 });
 
 app.listen(3000, function () {

@@ -14,7 +14,7 @@ app.get('/transactions', function (req, res) {
 	var con = mysql.createConnection({
   		host: "localhost",
   		user: "root",
-  		password: "helloworld"
+  		password: "helloworld",
   		database: "crypto_transactions"
 	});
 

@@ -31,9 +31,9 @@ app.get('/transactions', function (req, res) {
     		
     		if (err) throw err;
 
-    		for r in result {
+    		for (r in result) {
 
-    			for field in r {
+    			for (field in r) {
 
     				console.log(field);
     			}

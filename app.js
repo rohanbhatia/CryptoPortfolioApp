@@ -10,18 +10,23 @@ app.get('/', function (req, res) {
 //transactions
 app.get('/transactions', function (req, res) {
 
-	//connect to db. NOTE: I'm aware this is not secure at all
+	//connect to mysql. NOTE: I'm aware this is not secure at all
 	var con = mysql.createConnection({
   		host: "localhost",
   		user: "root",
   		password: "helloworld"
 	});
-
 	con.connect(function(err) {
   		
   		if (err) throw err;
   		
+  		//use db
+  		con.query("USE crypto_transactions", function (err, result) {
 
+  			if (err) throw err;
+  		});
+
+  		//transactions
   		con.query("SELECT * FROM TRANSACTIONS", function (err, result) {
     		
     		if (err) throw err;

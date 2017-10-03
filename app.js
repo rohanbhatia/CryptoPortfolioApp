@@ -31,10 +31,11 @@ app.get('/transactions', function (req, res) {
     		transactions = json.stringify(result);
     		console.log(transactions);
   		});
-  
+  		
+  		con.end();
 	});
 	
-	con.end();
+	
 	
 	
 });

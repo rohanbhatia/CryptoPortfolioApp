@@ -28,7 +28,7 @@ app.get('/transactions', function (req, res) {
     		
     		if (err) throw err;
 
-    		transactions = json.stringify(result);
+    		transactions = JSON.stringify(result);
     		console.log(transactions);
   		});
   		

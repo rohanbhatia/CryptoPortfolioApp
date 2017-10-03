@@ -38,7 +38,7 @@ app.get('/transactions', function (req, res) {
     				console.log(field);
     			}
   			}
-  		}
+  		});
   
 	});
 

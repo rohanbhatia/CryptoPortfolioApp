@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const mysql = require('mysql');
 
+//include all files in dir
+app.use(express.static(__dirname + '/'));
+
 //home url
 app.get('/', function (req, res) {
   res.sendFile('index.html', {root: __dirname});

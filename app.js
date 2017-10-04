@@ -4,11 +4,11 @@ const mysql = require('mysql');
 
 //home url
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.sendFile('index.html', {root: __dirname});
 })
 
 //transactions
-app.get('/transactions', function (req, res) {
+app.get('/buys', function (req, res) {
 
 	//connect to mysql. NOTE: I'm aware this is not secure at all
 	var con = mysql.createConnection({
@@ -22,9 +22,10 @@ app.get('/transactions', function (req, res) {
   		
   		if (err) throw err;
   		
-  		//transactions
-  		var transactions; 
-  		con.query("SELECT * FROM transactions", function (err, result) {
+  		//buys
+  		var transactions;
+  		var query = "SELECT * FROM buys";
+  		con.query(query, function (err, result) {
     		
     		if (err) throw err;
 
@@ -34,12 +35,8 @@ app.get('/transactions', function (req, res) {
   		
   		con.end();
 	});
-	
-	
-	
-	
 });
 
 app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+  console.log('App running');
 });

@@ -55,7 +55,7 @@ app.get('/holdings', function (req, res) {
   		if (err) throw err;
   		
   		var holdings;
-  		var query = "SELECT crypto_type, SUM(crypto_amount) FROM buys GROUP BY crypto_type";
+  		var query = "SELECT crypto_type, SUM(crypto_amount) AS type, amount FROM buys GROUP BY crypto_type";
   		con.query(query, function (err, result) {
     		
     		if (err) throw err;

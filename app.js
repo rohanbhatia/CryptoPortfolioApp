@@ -40,6 +40,35 @@ app.get('/buys', function (req, res) {
 	});
 });
 
+app.get('/holdings', function (req, res) {
+
+	//connect to mysql. NOTE: I'm aware this is not secure at all
+	var con = mysql.createConnection({
+  		host: "localhost",
+  		user: "root",
+  		password: "helloworld",
+  		database: "crypto_transactions"
+	});
+
+	con.connect(function(err) {
+  		
+  		if (err) throw err;
+  		
+  		var holdings;
+  		var query = "SELECT crypto_type, SUM(crypto_amount) FROM buys GROUP BY crypto_type";
+  		con.query(query, function (err, result) {
+    		
+    		if (err) throw err;
+
+    		holdings = JSON.stringify(result);
+    		res.send(holdings);
+  		});
+  		
+  		con.end();
+	});
+
+});
+
 app.listen(3000, function () {
   console.log('App running');
 });

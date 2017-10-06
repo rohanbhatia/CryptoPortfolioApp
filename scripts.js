@@ -92,8 +92,12 @@ function get_holdings() {
         		}
         		else if (next.className == 'usd') {
 
-        			usdprice = ((next.innerHTML).split(" "))[3];
-        			alert(usdprice);
+        			usdprice = parseFloat(((next.innerHTML).split(" "))[3]);
+        		}
+        		else if (next.className == 'position_value') {
+
+        			var position_value = usdprice * holdings;
+        			next.innerHTML = id + ' Position Value (USD): ' + position_value.toString();
         			break;
 
         		}
@@ -108,8 +112,6 @@ function get_holdings() {
 	};
 
 	xhr.send();
-
-
 }
 
 

@@ -92,11 +92,12 @@ function get_holdings() {
 	        		else if (next.className == 'usd') {
 
 	        			usdprice = parseFloat(((next.innerHTML).split(" "))[3]);
+	        			alert(usdprice);
 	        		}
 	        		else if (next.className == 'position_value') {
 
-	        			var position_value = usdprice * holdings;
-	        			next.innerHTML = id + ' Position Value (USD): ' + position_value.toString();
+	        			//var position_value = usdprice * holdings;
+	        			//next.innerHTML = id + ' Position Value (USD): ' + position_value.toString();
 	        			break;
 
 	        		}

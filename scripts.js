@@ -2,7 +2,15 @@ global_count = 0;
 
 function get_prices() {
 
+	for (type in ["BTC", "ETH", "LTC"]) {
+		for(currency in ["USD", "CAD"]) {
 
+			if (!(type == "LTC" && currency == "CAD")) {
+				get_price(type, currency);
+			}
+
+		}
+	}
 
 }
 
@@ -117,9 +125,4 @@ function get_holdings() {
 
 
 
-
-get_price("BTC", "USD");
-get_price("BTC", "CAD");
-get_price("ETH", "USD");
-get_price("ETH", "CAD");
-get_price("LTC", "USD");
+get_prices();

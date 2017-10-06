@@ -29,23 +29,6 @@ function get_price(type, currency) {
 
     		json = JSON.parse(xhr.responseText);
     		price = (parseFloat(json['result'][json_pairname]['a'][0]) + parseFloat(json['result'][json_pairname]['b'][0]))/2;
-        	
-
-
-
-    		
-        	var children = document.getElementById(type.toLowerCase()).childNodes;
-
-        	for (child in (document.getElementById(type.toLowerCase())).childNodes) {
-
-        		//alert(child.className);
-
-        		// if (child.className == currency.toLowerCase()) {
-        		// 	alert(price);
-        		// 	//child.innerHTML = type + " Price (" + currency + "): " + toString(price);
-        		// 	break;
-        		// }
-        	}
 
         	var next = document.getElementById(type.toLowerCase()).firstChild;
         	while (true) {
@@ -56,19 +39,47 @@ function get_price(type, currency) {
         			break;
         		}
         		else {
+        			
         			next = next.nextSibling;
         		}
-
-
         	}
-
-
-
     	}	
 	};
 
 	xhr.send()
 };
+
+
+function get_holdings() {
+
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', '18.221.195.150:3000'); //aware this is not secure
+	xhr.onload = function() {
+
+		if (xhr.status === 200) {
+
+			json = JSON.parse(xhr.responseText);
+			
+			for (entry in json) {
+
+				alert(entry['crypto_type']);
+				alert(entry['total']);
+
+			}
+
+
+		}
+
+
+	}
+
+}
+
+
+
+
+
+
 
 get_price("BTC", "USD");
 get_price("BTC", "CAD");
@@ -76,3 +87,4 @@ get_price("ETH", "USD");
 get_price("ETH", "CAD");
 get_price("LTC", "USD");
 //get_price("LTC", "CAD");
+get_holdings();

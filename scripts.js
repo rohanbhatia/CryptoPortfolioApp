@@ -72,6 +72,7 @@ function get_holdings() {
         		if (next.className == 'total') {
         
                 	next.innerHTML = 'Total ' + id.toString() + ": " + holdings.toString();
+                	next = next.nextSibling;
         		}
         		else if (next.className == 'usd') {
 

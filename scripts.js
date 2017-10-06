@@ -6,15 +6,14 @@ function get_prices() {
  	arr2 = ["USD", "CAD"];
 
 	for (type in arr1) {
+		
 		for(currency in arr2) {
 
 			if (!(arr1[type] == "LTC" && arr2[currency] == "CAD")) {
 				get_price(arr1[type], arr2[currency]);
 			}
-
 		}
 	}
-
 }
 
 
@@ -110,10 +109,8 @@ function get_holdings() {
 	        			break;
 
 	        		}
-	        		
 	        			
 	        		next = next.nextSibling;
-	        		
         		}
 			}
 		}
@@ -123,8 +120,5 @@ function get_holdings() {
 }
 
 
-
-
-
-
+//Main
 get_prices();

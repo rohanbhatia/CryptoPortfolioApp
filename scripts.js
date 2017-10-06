@@ -2,12 +2,14 @@ global_count = 0;
 
 function get_prices() {
 
-	for (type in ["BTC", "ETH", "LTC"]) {
-		for(currency in ["USD", "CAD"]) {
-			alert(type);
-			alert(currency);
-			if (!(type == "LTC" && currency == "CAD")) {
-				get_price(type, currency);
+	arr1 = ["BTC", "ETH", "LTC"];
+ 	arr2 = ["USD", "CAD"];
+
+	for (type in arr1) {
+		for(currency in arr2) {
+
+			if (!(arr1[type] == "LTC" && arr2[currency] == "CAD")) {
+				get_price(arr1[type], arr2[currency]);
 			}
 
 		}

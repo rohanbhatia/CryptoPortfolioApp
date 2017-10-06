@@ -60,10 +60,10 @@ function get_holdings() {
 
 
 			json = JSON.parse(xhr.responseText);
-			alert(json);
+			
 			for (entry in json) {
 
-				//alert(entry['crypto_type']);
+				alert(entry["crypto_type"]);
 				//alert(entry['total']);
 
 			}

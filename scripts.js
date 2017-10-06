@@ -53,7 +53,7 @@ function get_price(type, currency) {
 function get_holdings() {
 
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', '18.221.195.150/holdings'); //aware this is not secure
+	xhr.open('GET', '/holdings'); //aware this is not secure
 	xhr.onload = function() {
 
 		if (xhr.status === 200) {

@@ -63,7 +63,7 @@ function get_holdings() {
 			
 			for (entry in json) {
 
-				alert(entry["crypto_type"]);
+				alert(entry);
 				//alert(entry['total']);
 
 			}

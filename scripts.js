@@ -45,7 +45,10 @@ function get_price(type, currency) {
         
                 	next.innerHTML = type + " Price (" + currency + "): " + price.toString();
                 	global_count++;
-                	alert(global_count);
+                	if (global_count == 5) {
+                		global_count = 0;
+                		get_holdings()
+                	}
         			break;
         		}
         		else {

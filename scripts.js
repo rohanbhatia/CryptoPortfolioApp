@@ -4,7 +4,8 @@ function get_prices() {
 
 	for (type in ["BTC", "ETH", "LTC"]) {
 		for(currency in ["USD", "CAD"]) {
-
+			alert(type);
+			alert(currency);
 			if (!(type == "LTC" && currency == "CAD")) {
 				get_price(type, currency);
 			}

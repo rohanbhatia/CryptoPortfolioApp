@@ -92,7 +92,7 @@ function get_holdings() {
         		}
         		else if (next.className == 'usd') {
 
-        			usdprice = ((next.innerHTML).split(" "));
+        			usdprice = ((next.innerHTML).split(" "))[3];
         			alert(usdprice);
         			break;
 

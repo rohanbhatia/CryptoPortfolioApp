@@ -71,7 +71,6 @@ function get_holdings() {
 
 		if (xhr.status === 200) {
 
-
 			json = JSON.parse(xhr.responseText);
 			
 			for (entry in json) {
@@ -85,28 +84,27 @@ function get_holdings() {
 
         		while (true) {
 
-        		if (next.className == 'total') {
-        
-                	next.innerHTML = 'Total ' + id.toString() + ": " + holdings.toString();
-                	next = next.nextSibling;
-        		}
-        		else if (next.className == 'usd') {
+	        		if (next.className == 'total') {
+	        
+	                	next.innerHTML = 'Total ' + id.toString() + ": " + holdings.toString();
+	                	next = next.nextSibling;
+	        		}
+	        		else if (next.className == 'usd') {
 
-        			usdprice = parseFloat(((next.innerHTML).split(" "))[3]);
-        		}
-        		else if (next.className == 'position_value') {
+	        			usdprice = parseFloat(((next.innerHTML).split(" "))[3]);
+	        		}
+	        		else if (next.className == 'position_value') {
 
-        			var position_value = usdprice * holdings;
-        			next.innerHTML = id + ' Position Value (USD): ' + position_value.toString();
-        			break;
+	        			var position_value = usdprice * holdings;
+	        			next.innerHTML = id + ' Position Value (USD): ' + position_value.toString();
+	        			break;
 
+	        		}
+	        		else {
+	        			
+	        			next = next.nextSibling;
+	        		}
         		}
-        		else {
-        			
-        			next = next.nextSibling;
-        		}
-        	}
-
 			}
 		}
 	};

@@ -82,10 +82,6 @@ function get_holdings() {
 
 				var next = document.getElementById(id.toLowerCase()).firstChild;
 				
-				while (global_count < 5) {
-					//spin
-				}
-
 
         		while (true) {
 

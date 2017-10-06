@@ -63,8 +63,22 @@ function get_holdings() {
 			
 			for (entry in json) {
 
-				alert(json[entry]["crypto_type"]);
-				//alert(entry['total']);
+				var id = json[entry]["crypto_type"];
+				var holdings = parseFloat(json[entry]["total"]);
+
+				var next = document.getElementById(id.toLowerCase()).firstChild;
+        		while (true) {
+
+        		if (next.className == 'total') {
+        
+                	next.innerHTML = 'Total ' + id.toString() + ": " + holdings.toString();
+        			break;
+        		}
+        		else {
+        			
+        			next = next.nextSibling;
+        		}
+        	}
 
 			}
 		}

@@ -45,6 +45,7 @@ function get_price(type, currency) {
         
                 	next.innerHTML = type + " Price (" + currency + "): " + price.toString();
                 	global_count++;
+                	alert(global_count);
         			break;
         		}
         		else {

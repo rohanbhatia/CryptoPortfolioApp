@@ -1,4 +1,3 @@
-
 function get_price(type, currency) {
 	
 	//hardcoded values for the kraken api
@@ -65,6 +64,7 @@ function get_holdings() {
 
 				var id = json[entry]["crypto_type"];
 				var holdings = parseFloat(json[entry]["total"]);
+				var usdprice;
 
 				var next = document.getElementById(id.toLowerCase()).firstChild;
         		while (true) {
@@ -72,7 +72,13 @@ function get_holdings() {
         		if (next.className == 'total') {
         
                 	next.innerHTML = 'Total ' + id.toString() + ": " + holdings.toString();
+        		}
+        		else if (next.className == 'usd') {
+
+        			usdprice = parseFloat(((next.innerHTML).split(" "))[3]);
+        			alert(usdprice);
         			break;
+
         		}
         		else {
         			

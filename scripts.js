@@ -102,7 +102,6 @@ function get_holdings() {
 	        		else if (next.className == 'usd') {
 
 	        			usdprice = parseFloat(((next.innerHTML).split(" "))[3]);
-	        			alert(usdprice);
 	        		}
 	        		else if (next.className == 'position_value') {
 

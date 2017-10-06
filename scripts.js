@@ -58,12 +58,13 @@ function get_holdings() {
 
 		if (xhr.status === 200) {
 
+			alert(xhr.responseText);
 			json = JSON.parse(xhr.responseText);
 			
 			for (entry in json) {
 
-				alert(entry['crypto_type']);
-				alert(entry['total']);
+				//alert(entry['crypto_type']);
+				//alert(entry['total']);
 
 			}
 		}

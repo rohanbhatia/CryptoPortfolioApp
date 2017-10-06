@@ -66,12 +66,11 @@ function get_holdings() {
 				alert(entry['total']);
 
 			}
-
-
 		}
+	};
 
+	xhr.send();
 
-	}
 
 }
 

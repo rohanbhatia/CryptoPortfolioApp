@@ -123,5 +123,3 @@ get_price("BTC", "CAD");
 get_price("ETH", "USD");
 get_price("ETH", "CAD");
 get_price("LTC", "USD");
-//get_price("LTC", "CAD");
-get_holdings();

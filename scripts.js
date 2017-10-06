@@ -1,3 +1,12 @@
+global_count = 0;
+
+function get_prices() {
+
+
+
+}
+
+
 function get_price(type, currency) {
 	
 	//hardcoded values for the kraken api
@@ -35,6 +44,7 @@ function get_price(type, currency) {
         		if (next.className == currency.toLowerCase()) {
         
                 	next.innerHTML = type + " Price (" + currency + "): " + price.toString();
+                	global_count++;
         			break;
         		}
         		else {
@@ -67,6 +77,12 @@ function get_holdings() {
 				var usdprice;
 
 				var next = document.getElementById(id.toLowerCase()).firstChild;
+				
+				while (global_count < 5) {
+					//spin
+				}
+
+
         		while (true) {
 
         		if (next.className == 'total') {

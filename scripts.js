@@ -112,10 +112,10 @@ function get_holdings() {
 	        			var position_value = usdprice * holdings;
 	        			next.innerHTML = id + ' Position Value (USD): ' + position_value.toString();
 
-	        			if (id = "BTC") {
+	        			if (id == "BTC") {
 	        				btc_value = position_value;
 	        			}
-	        			else if (id = "ETH") {
+	        			else if (id == "ETH") {
 	        				eth_value = position_value;
 	        			} 
 	        			else {
@@ -174,14 +174,14 @@ function draw_highchart() {
 	        }
 	    },
 	    series: [{
-	        name: 'Brands',
+	        name: 'Cryptos',
 	        colorByPoint: true,
 	        data: [{
 	            name: 'BTC',
 	            y: btc_value
 	        }, {
 	            name: 'ETH',
-	            y: eth_value,
+	            y: eth_value
 	        }, {
 	            name: 'LTC',
 	            y: ltc_value

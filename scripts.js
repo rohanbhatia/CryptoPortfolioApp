@@ -1,4 +1,8 @@
 global_count = 0;
+btc_value = 0;
+eth_value = 0;
+ltc_value = 0;
+highchart_count = 0;
 
 function get_prices() {
 
@@ -56,8 +60,9 @@ function get_price(type, currency) {
                 	next.innerHTML = type + " Price (" + currency + "): " + price.toString();
                 	global_count++;
                 	if (global_count == 5) {
+                		
                 		global_count = 0;
-                		get_holdings()
+                		get_holdings();
                 	}
         			break;
         		}
@@ -106,6 +111,24 @@ function get_holdings() {
 
 	        			var position_value = usdprice * holdings;
 	        			next.innerHTML = id + ' Position Value (USD): ' + position_value.toString();
+
+	        			if (id = "BTC") {
+	        				btc_value = position_value;
+	        			}
+	        			else if (id = "ETH") {
+	        				eth_value = position_value;
+	        			} 
+	        			else {
+	        				ltc_value = position_value;
+	        			}
+	        			
+	        			highchart_count++;
+
+	        			if (highchart_count == 3) {
+	        				highchart_count = 0;
+	        				draw_highchart();
+	        			}
+
 	        			break;
 
 	        		}
@@ -117,6 +140,54 @@ function get_holdings() {
 	};
 
 	xhr.send();
+}
+
+function draw_highchart() {
+
+
+
+
+	Highcharts.chart('container', {
+	    chart: {
+	        plotBackgroundColor: null,
+	        plotBorderWidth: null,
+	        plotShadow: false,
+	        type: 'pie'
+	    },
+	    title: {
+	        text: ''
+	    },
+	    tooltip: {
+	        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	    },
+	    plotOptions: {
+	        pie: {
+	            allowPointSelect: true,
+	            cursor: 'pointer',
+	            dataLabels: {
+	                enabled: false,
+	                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+	                style: {
+	                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+	                }
+	            }
+	        }
+	    },
+	    series: [{
+	        name: 'Brands',
+	        colorByPoint: true,
+	        data: [{
+	            name: 'BTC',
+	            y: btc_value
+	        }, {
+	            name: 'ETH',
+	            y: eth_value,
+	        }, {
+	            name: 'LTC',
+	            y: ltc_value
+	        }]
+	    }]
+	});
 }
 
 

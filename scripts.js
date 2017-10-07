@@ -144,7 +144,7 @@ function get_holdings() {
 
 function draw_highchart() {
 
-
+	Highcharts.setOptions({colors: ['#50B432', '#ED561B', '#DDDF00'});
 
 
 	Highcharts.chart('container', {
@@ -155,7 +155,7 @@ function draw_highchart() {
 	        type: 'pie'
 	    },
 	    title: {
-	        text: ''
+	        text: 'Holdings By Percentage'
 	    },
 	    tooltip: {
 	        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'

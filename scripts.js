@@ -144,7 +144,7 @@ function get_holdings() {
 
 function draw_highchart() {
 
-	Highcharts.setOptions({colors: ['#50B432', '#ED561B', '#DDDF00'});
+	Highcharts.setOptions({colors: ['#50B432', '#ED561B', '#DDDF00']});
 
 
 	Highcharts.chart('container', {

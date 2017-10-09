@@ -31,7 +31,7 @@ h1 {
 
 #new_transaction {
 	display:inline-block;
-	width:45%;
+	width:50%;
 }
 
 #new_transaction > input {

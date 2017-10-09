@@ -29,6 +29,7 @@ h1 {
 }
 
 #transaction {
+	display:inline-block;
 	margin:10px;
 	width:50%;
 

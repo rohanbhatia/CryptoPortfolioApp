@@ -26,7 +26,11 @@ h1 {
 #container {
 	display:inline-block;
 	margin-top:25px;
-	width:50%;
+	width:45%;
+}
+
+#row2 > h3 {
+	margin:10px;
 }
 
 #new_transaction {

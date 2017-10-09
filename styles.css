@@ -24,9 +24,9 @@ h1 {
 }
 
 #container {
-	display:inline-block;
-	margin-top:25px;
-	width:40%;
+	display:block;
+	margin:25px;
+	/*width:40%;*/
 }
 
 

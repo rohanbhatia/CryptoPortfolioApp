@@ -55,9 +55,9 @@
 	  <form id="new_transaction" action="/transaction" method="post">
 			Authentication: <input type="password"><br>
 			Transaction Date: <input type="date"><br>
-			Transaction Cost: <input type="text"><br>
+			Transaction Cost: <input type="number" max="10000" step="0.01"><br>
 			Crypto Type: <input type="text"><br>
-			Crypto Amount: <input type="number"><br>
+			Crypto Amount: <input type="number" max="10000" step="0.00000001"><br>
 			Current Crypto Price: <input type="text"><br><br>
 			<input type="submit" value="Submit"><br><br><br><br><br>
 	  </form>

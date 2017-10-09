@@ -26,15 +26,11 @@ h1 {
 #container {
 	display:inline-block;
 	margin-top:25px;
-	width:40%;
+	margin-right:25px;
+	width:50%;
 }
 
 #transaction {
 	display:inline-block;
-	margin:10px;
 	width:50%;
-}
-
-form {
-	display:inline-block;
 }

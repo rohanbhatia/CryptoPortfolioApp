@@ -29,17 +29,17 @@ h1 {
 	width:40%;
 }
 
+
 #form {
-	display:inline-block;
+	width:40%;
 }
+
 
 #title {
 	margin:10px;
 }
 
 #new_transaction {
-	display:inline-block;
-	width:40%;
 	margin:10px;
 }
 

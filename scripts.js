@@ -155,7 +155,7 @@ function draw_highchart() {
 	        type: 'pie'
 	    },
 	    title: {
-	        text: 'Holdings By Percentage'
+	        text: ''
 	    },
 	    tooltip: {
 	        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'

@@ -23,7 +23,7 @@ h1 {
 	text-align: center;
 }
 
-#chart {
+#container {
 	display:inline-block;
 	margin-top:25px;
 	width:40%;

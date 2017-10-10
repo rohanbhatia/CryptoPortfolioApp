@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const mysql = require('mysql');
 
-//include all files in dir
-app.use(express.static(__dirname + '/'));
+
+app.use(express.static(__dirname + '/')); //include all files in dir
+app.use(express.json()); // to support JSON-encoded bodies
+app.use(express.urlencoded()); // to support URL-encoded bodies
 
 //home url
 app.get('/', function (req, res) {
@@ -66,6 +68,16 @@ app.get('/holdings', function (req, res) {
   		
   		con.end();
 	});
+
+});
+
+app.post('/transaction', function (req, res) {
+
+	var password = req.body.password;
+	console.log(password);
+
+	res.redirect('/');
+
 
 });
 

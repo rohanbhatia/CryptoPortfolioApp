@@ -5,7 +5,7 @@ const mysql = require('mysql');
 
 app.use(express.static(__dirname + '/')); //include all files in dir
 app.use(express.json()); // to support JSON-encoded bodies
-app.use(express.urlencoded()); // to support URL-encoded bodies
+app.use(express.urlencoded({extended: true})); // to support URL-encoded bodies
 
 //home url
 app.get('/', function (req, res) {
@@ -73,7 +73,7 @@ app.get('/holdings', function (req, res) {
 
 app.post('/transaction', function (req, res) {
 
-	var password = req.body.password;
+	var password = req.body["password"];
 	console.log(password);
 
 	res.redirect('/');

@@ -56,12 +56,12 @@
   <div id="form">
   	  <h3 id="title">New Transaction</h3>
 	  <form id="new_transaction" action="/transaction" method="post">
-			Authentication: <input type="password"><br>
-			Transaction Date: <input type="date"><br>
-			Transaction Cost: <input type="number" max="10000" step="0.01"><br>
-			Crypto Type: <input type="text"><br>
-			Crypto Amount: <input type="number" max="10000" step="0.00000001"><br>
-			Current Crypto Price: <input type="number" max="10000" step="0.01"><br><br>
+			Authentication: <input type="password" name="password"><br>
+			Transaction Date: <input type="date" name="tx_date"><br>
+			Transaction Cost: <input type="number" max="10000" step="0.01" name="tx_cost"><br>
+			Crypto Type: <input type="text" name="type"><br>
+			Crypto Amount: <input type="number" max="10000" step="0.00000001" name="amount"><br>
+			Current Crypto Price: <input type="number" max="10000" step="0.01" name="current_price"><br><br>
 			<input type="submit" value="Submit"><br><br><br><br><br>
 	  </form>
 		</div>

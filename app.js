@@ -85,13 +85,14 @@ app.post('/transaction', function (req, res) {
   		console.log(data);
   		if (password.toString().trim() == data.toString().trim()) { //authenticated
 
-  			var transaction_date = req.body["tx_date"];
+
+  			var transaction_date = req.body["tx_date"]; console.log(transaction_date);
   			var transaction_cost = req.body["tx_cost"];
   			var crypto_type = req.body["type"];
   			var crypto_amount = req.body["amount"];
   			var current_price = req.body["current_price"];
   			var effective_price = parseFloat(crypto_amount) * parseFloat(current_price); 
-  			var query = "INSERT INTO buys (date, cost, crypto_type, crypto_amount, effective_price, actual_price) VALUES (" + transaction_date + ", " + transaction_cost + ", '" + crypto_type + "', " + crypto_amount + ", " + effective_price.toString() + ", " + current_price + ")";
+  			var query = "INSERT INTO buys (date, cost, crypto_type, crypto_amount, effective_price, actual_price) VALUES ( STR-TO-DATE('" + transaction_date + "','yyyy-mm-dd'), " + transaction_cost + ", '" + crypto_type + "', " + crypto_amount + ", " + effective_price.toString() + ", " + current_price + ")";
 
   			//connect to mysql. NOTE: I'm aware this is not secure at all
 			var con = mysql.createConnection({

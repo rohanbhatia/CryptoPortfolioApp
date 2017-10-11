@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mysql = require('mysql');
+const fs = require('fs');
 
 
 app.use(express.static(__dirname + '/')); //include all files in dir
@@ -74,7 +75,23 @@ app.get('/holdings', function (req, res) {
 app.post('/transaction', function (req, res) {
 
 	var password = req.body["password"];
+
 	console.log(password);
+
+	fs.readFile(__dirname + '/tx_auth.txt', 'utf8', function (err,data) {
+  		
+  		if (err) throw err;
+
+  		console.log(data);
+  		if (password.toString().trim() == data.toString().trim()) { //authenticated
+
+
+  		}
+  		else { // not authenticated
+  			
+  		}
+	});
+
 
 	res.redirect('/');
 

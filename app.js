@@ -82,7 +82,6 @@ app.post('/transaction', function (req, res) {
   		
   		if (err) throw err;
 
-  		console.log(data);
   		if (password.toString().trim() == data.toString().trim()) { //authenticated
 
 

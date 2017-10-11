@@ -91,7 +91,7 @@ app.post('/transaction', function (req, res) {
   			var crypto_amount = req.body["amount"];
   			var current_price = req.body["current_price"];
   			var effective_price = parseFloat(crypto_amount) * parseFloat(current_price); 
-  			var query = "INSERT INTO buys VALUES (" + transaction_date + ", " + transaction_cost + "," + crypto_type + "," + crypto_amount + "," + effective_price.toString() + "," + current_price + ")";
+  			var query = "INSERT INTO buys (date, cost, crypto_type, crypto_amount, effective_price, actual_price) VALUES (" + transaction_date + ", " + transaction_cost + "," + crypto_type + "," + crypto_amount + "," + effective_price.toString() + "," + current_price + ")";
 
   			//connect to mysql. NOTE: I'm aware this is not secure at all
 			var con = mysql.createConnection({

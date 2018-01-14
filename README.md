@@ -1,2 +1,2 @@
 # CryptoPortfolioApp
-This app displays all my current cryptocurrency holdings. The app is live at http://18.221.195.150/
+This app used to display all my current cryptocurrency holdings. I deployed it using Nginx, but took it down recently.
